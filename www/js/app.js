@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const API_ROOT = "/api";
+  const API_ROOT = "api";
 
   /* =========================
      APP STATE
