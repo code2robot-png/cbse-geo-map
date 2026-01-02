@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CBSE Class 10 Geography – Map Work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font (same as site) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- WordPress core + block styles (from minusgames.com) -->
+    <link rel="stylesheet" href="https://minusgames.com/wp-includes/css/dist/block-library/style.min.css">
+
+    <!-- WordPress theme stylesheet (keeps header identical) -->
+    <link rel="stylesheet" href="https://minusgames.com/wp-content/themes/twentytwentyfour/style.css">
+
+    <!-- App-specific styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER (WordPress-compatible markup preserved) -->
+    <header class="wp-block-template-part"
+        style="background:#fff;border-bottom:1px solid #ddd;font-family:'Genos',sans-serif;">
+        <div class="wp-block-group alignfull is-layout-flow">
+            <div class="wp-block-group has-global-padding is-layout-constrained">
+                <div class="wp-block-group alignwide is-layout-flex is-content-justification-space-between"
+                    style="padding:20px;max-width:1200px;margin:0 auto;align-items:center;">
+
+                    <p class="wp-block-site-title" style="margin:0;font-size:1.5rem;font-weight:bold;">
+                        <a href="https://minusgames.com" style="text-decoration:none;color:#333;">
+                            Minu's Robotics and Coding
+                        </a>
+                    </p>
+
+                    <nav style="display:flex;gap:20px;">
+                        <a href="https://minusgames.com/" style="text-decoration:none;color:#555;">Home</a>
+                        <a href="https://minusgames.com/gallery/" style="text-decoration:none;color:#555;">Gallery</a>
+                        <a href="https://minusgames.com/courses/" style="text-decoration:none;color:#555;">Courses</a>
+                        <a href="https://minusgames.com/admission/"
+                            style="text-decoration:none;color:#555;">Admission</a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar"
+        style="background:#f9f9f9;padding:10px 0;border-bottom:1px solid #eee;font-family:'Genos',sans-serif;">
+        <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+            <a href="https://minusgames.com" style="text-decoration:none;color:#0066cc;">Home</a>
+            <span style="margin:0 8px;color:#999;">/</span>
+            <span style="color:#444;font-weight:500;">Geography Map Practice</span>
+        </div>
+    </div>
+
+    <!-- APP ROOT -->
+    <div class="app">
+
+        <div class="mapArea">
+            <div class="mapWrap" id="mapWrap">
+
+                <!-- CONTROLS -->
+                <div class="controls-overlay" id="controlsOverlay">
+                    <div class="controls-content" id="controlsContent">
+
+                        <!-- Mode Toggle -->
+                        <div class="control-group">
+                            <div class="mode-toggle" role="radiogroup" aria-label="Select Mode">
+                                <input type="radio" id="modeLearn" name="mode" value="learn" checked>
+                                <label for="modeLearn" class="mode-pill">Learn Mode</label>
+
+                                <input type="radio" id="modeExam" name="mode" value="exam">
+                                <label for="modeExam" class="mode-pill">Exam Mode</label>
+                            </div>
+                        </div>
+
+                        <!-- Topic Selector -->
+                        <div class="control-group">
+                            <select id="topicSelect">
+                                <option value="">Loading topics...</option>
+                            </select>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="control-group progress-wrap">
+                            <div class="progress-count" id="progressCount">0 / 0</div>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                                <div class="progress-label" id="progressLabel"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- MAP -->
+                <img src="assets/india-map.png" alt="India Map" id="indiaMap">
+
+                <!-- HINT BOX -->
+                <div id="mapHintBox">💡 Hint will appear here</div>
+
+                <!-- LEARNING DOCK -->
+                <div id="learningDock" class="learning-dock hidden">
+                    <div class="learning-board">
+
+                        <div class="dock-title">
+                            ⚓️ Learning Board @Andaman
+                        </div>
+
+                        <div id="dockContent" class="dock-content">
+                            <div class="dock-idle">
+                                Tap a place on the map<br>
+                                to understand why it exists
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- APP SCRIPT -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

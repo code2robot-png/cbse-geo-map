@@ -1,0 +1,751 @@
+{
+  "meta": {
+    "board": "CBSE",
+    "class": 10,
+    "book": "Contemporary India – II",
+    "status": "FINAL AUTHOR BASE + FULL NCERT CONTEXT LAYER",
+    "safety": "All original coordinates preserved. mapContext is additive and non-breaking."
+  },
+
+  "topics": [
+    {
+      "id": "iron_ore",
+      "label": "Minerals → Iron Ore",
+      "spots": [
+        {
+          "name": "Odisha–Jharkhand Belt",
+          "type": "belt",
+          "x": 0.607,
+          "y": 0.5,
+          "mapContext": {
+            "ncertLine": "Iron ore is found in the Odisha–Jharkhand belt.",
+            "whyHere": ["Chotanagpur Plateau", "Ancient crystalline rocks"],
+            "tags": ["iron"]
+          }
+        },
+
+        {
+          "name": "Durg–Bastar–Chandrapur Belt",
+          "type": "belt",
+          "x": 0.432,
+          "y": 0.563,
+          "mapContext": {
+            "ncertLine": "Iron ore is mainly found in the Durg–Bastar–Chandrapur belt.",
+            "whyHere": ["Deccan Plateau"],
+            "tags": ["iron"]
+          }
+        },
+
+        {
+          "name": "Bellary–Chitradurga Belt",
+          "type": "belt",
+          "x": 0.282,
+          "y": 0.716,
+          "mapContext": {
+            "ncertLine": "Iron ore is found in the Bellary–Chitradurga belt.",
+            "tags": ["iron"]
+          }
+        },
+
+        {
+          "name": "Mayurbhanj",
+          "type": "mine",
+          "x": 0.629,
+          "y": 0.517,
+          "mapContext": {
+            "ncertLine": "Mayurbhanj is an important iron ore mining area.",
+            "tags": ["iron"]
+          }
+        },
+
+        {
+          "name": "Bailadila",
+          "type": "mine",
+          "x": 0.459,
+          "y": 0.603,
+          "mapContext": {
+            "ncertLine": "Bailadila produces high-grade iron ore.",
+            "tags": ["iron"]
+          }
+        },
+
+        {
+          "name": "Kudremukh",
+          "type": "mine",
+          "x": 0.231,
+          "y": 0.754,
+          "mapContext": {
+            "ncertLine": "Kudremukh is known for iron ore mining.",
+            "tags": ["iron"]
+          }
+        },
+
+        {
+          "name": "Paradip",
+          "type": "export_port",
+          "x": 0.639,
+          "y": 0.542,
+          "mapContext": {
+            "ncertLine": "Paradip port exports iron ore.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Visakhapatnam",
+          "type": "export_port",
+          "x": 0.526,
+          "y": 0.621,
+          "mapContext": {
+            "ncertLine": "Visakhapatnam port exports iron ore.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Marmagao",
+          "type": "export_port",
+          "x": 0.196,
+          "y": 0.705,
+          "mapContext": {
+            "ncertLine": "Marmagao port exports iron ore.",
+            "tags": ["port"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "manganese",
+      "label": "Minerals → Manganese",
+      "spots": [
+        {
+          "name": "Sundargarh",
+          "type": "mine",
+          "x": 0.551,
+          "y": 0.511,
+          "mapContext": {
+            "ncertLine": "Odisha is a leading producer of manganese.",
+            "tags": ["manganese"]
+          }
+        },
+
+        {
+          "name": "Kendujhar (Keonjhar)",
+          "type": "mine",
+          "x": 0.599,
+          "y": 0.518,
+          "mapContext": {
+            "ncertLine": "Keonjhar is an important manganese mining area.",
+            "tags": ["manganese"]
+          }
+        },
+
+        {
+          "name": "Balaghat",
+          "type": "mine",
+          "x": 0.406,
+          "y": 0.511,
+          "mapContext": {
+            "ncertLine": "Balaghat is a manganese producing region.",
+            "tags": ["manganese"]
+          }
+        },
+
+        {
+          "name": "Shivamogga",
+          "type": "mine",
+          "x": 0.233,
+          "y": 0.74,
+          "mapContext": {
+            "ncertLine": "Manganese is mined in Shivamogga region.",
+            "tags": ["manganese"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "bauxite",
+      "label": "Minerals → Bauxite",
+      "spots": [
+        {
+          "name": "Koraput Plateau",
+          "type": "field",
+          "x": 0.509,
+          "y": 0.596,
+          "mapContext": {
+            "ncertLine": "Bauxite is found on the Koraput Plateau.",
+            "tags": ["bauxite"]
+          }
+        },
+
+        {
+          "name": "Lohardaga",
+          "type": "mine",
+          "x": 0.57,
+          "y": 0.461,
+          "mapContext": {
+            "ncertLine": "Lohardaga is an important bauxite mining area.",
+            "tags": ["bauxite"]
+          }
+        },
+
+        {
+          "name": "Katni",
+          "type": "mine",
+          "x": 0.427,
+          "y": 0.451,
+          "mapContext": {
+            "ncertLine": "Bauxite is mined in Katni region.",
+            "tags": ["bauxite"]
+          }
+        },
+
+        {
+          "name": "Amarkantak Plateau",
+          "type": "field",
+          "x": 0.467,
+          "y": 0.476,
+          "mapContext": {
+            "ncertLine": "Bauxite is found in Amarkantak Plateau.",
+            "tags": ["bauxite"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "coal_lignite",
+      "label": "Minerals → Coal & Lignite",
+      "spots": [
+        {
+          "name": "Jharia",
+          "type": "coalfield",
+          "x": 0.632,
+          "y": 0.437,
+          "mapContext": {
+            "ncertLine": "Jharia is the most important coalfield of India.",
+            "tags": ["coal"]
+          }
+        },
+
+        {
+          "name": "Raniganj",
+          "type": "coalfield",
+          "x": 0.646,
+          "y": 0.455,
+          "mapContext": {
+            "ncertLine": "Raniganj is the oldest coalfield of India.",
+            "tags": ["coal"]
+          }
+        },
+
+        {
+          "name": "Bokaro",
+          "type": "coalfield",
+          "x": 0.616,
+          "y": 0.441,
+          "mapContext": {
+            "ncertLine": "Bokaro is an important coalfield.",
+            "tags": ["coal"]
+          }
+        },
+
+        {
+          "name": "Talcher",
+          "type": "coalfield",
+          "x": 0.599,
+          "y": 0.534,
+          "mapContext": {
+            "ncertLine": "Talcher is a major coalfield of Odisha.",
+            "tags": ["coal"]
+          }
+        },
+
+        {
+          "name": "Neyveli",
+          "type": "lignite",
+          "x": 0.393,
+          "y": 0.819,
+          "mapContext": {
+            "ncertLine": "Neyveli is a major lignite field.",
+            "tags": ["lignite"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "petroleum_gas",
+      "label": "Petroleum & Natural Gas",
+      "spots": [
+        {
+          "name": "Digboi",
+          "type": "oilfield",
+          "x": 0.911,
+          "y": 0.319,
+          "mapContext": {
+            "ncertLine": "Digboi is an important oilfield in Assam.",
+            "tags": ["oil"]
+          }
+        },
+
+        {
+          "name": "Naharkatia",
+          "type": "oilfield",
+          "x": 0.887,
+          "y": 0.337,
+          "mapContext": {
+            "ncertLine": "Naharkatia is an oilfield in Assam.",
+            "tags": ["oil"]
+          }
+        },
+
+        {
+          "name": "Mumbai High",
+          "type": "offshore",
+          "x": 0.148,
+          "y": 0.604,
+          "mapContext": {
+            "ncertLine": "Mumbai High is an offshore oilfield.",
+            "tags": ["oil"]
+          }
+        },
+
+        {
+          "name": "Ankleshwar",
+          "type": "oilfield",
+          "x": 0.172,
+          "y": 0.516,
+          "mapContext": {
+            "ncertLine": "Ankleshwar is an oilfield in Gujarat.",
+            "tags": ["oil"]
+          }
+        },
+
+        {
+          "name": "Krishna–Godavari Basin",
+          "type": "gasfield",
+          "x": 0.46,
+          "y": 0.681,
+          "mapContext": {
+            "ncertLine": "Krishna–Godavari basin has natural gas reserves.",
+            "tags": ["gas"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "thermal_power",
+      "label": "Power Plants → Thermal",
+      "spots": [
+        {
+          "name": "Namrup",
+          "type": "thermal",
+          "x": 0.909,
+          "y": 0.302,
+          "mapContext": {
+            "ncertLine": "Thermal power plants are located near coalfields.",
+            "tags": ["power"]
+          }
+        },
+
+        {
+          "name": "Talcher",
+          "type": "thermal",
+          "x": 0.609,
+          "y": 0.534,
+          "mapContext": {
+            "ncertLine": "Talcher thermal plant uses nearby coalfields.",
+            "tags": ["power"]
+          }
+        },
+
+        {
+          "name": "Singrauli",
+          "type": "thermal",
+          "x": 0.482,
+          "y": 0.417,
+          "mapContext": {
+            "ncertLine": "Singrauli is a major thermal power station.",
+            "tags": ["power"]
+          }
+        },
+
+        {
+          "name": "Ramagundam",
+          "type": "thermal",
+          "x": 0.393,
+          "y": 0.589,
+          "mapContext": {
+            "ncertLine": "Ramagundam is a large thermal power plant.",
+            "tags": ["power"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "nuclear_power",
+      "label": "Power Plants → Nuclear",
+      "spots": [
+        {
+          "name": "Narora",
+          "type": "nuclear",
+          "x": 0.373,
+          "y": 0.298,
+          "mapContext": {
+            "ncertLine": "Narora is a nuclear power station.",
+            "tags": ["nuclear"]
+          }
+        },
+
+        {
+          "name": "Rawatbhata",
+          "type": "nuclear",
+          "x": 0.265,
+          "y": 0.385,
+          "mapContext": {
+            "ncertLine": "Rawatbhata is a nuclear power plant in Rajasthan.",
+            "tags": ["nuclear"]
+          }
+        },
+
+        {
+          "name": "Kakrapar",
+          "type": "nuclear",
+          "x": 0.179,
+          "y": 0.5,
+          "mapContext": {
+            "ncertLine": "Kakrapar is a nuclear power station.",
+            "tags": ["nuclear"]
+          }
+        },
+
+        {
+          "name": "Tarapur",
+          "type": "nuclear",
+          "x": 0.184,
+          "y": 0.541,
+          "mapContext": {
+            "ncertLine": "Tarapur is the oldest nuclear power plant.",
+            "tags": ["nuclear"]
+          }
+        },
+
+        {
+          "name": "Kalpakkam",
+          "type": "nuclear",
+          "x": 0.417,
+          "y": 0.784,
+          "mapContext": {
+            "ncertLine": "Kalpakkam is a nuclear power station in Tamil Nadu.",
+            "tags": ["nuclear"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "ports",
+      "label": "Major Sea Ports",
+      "spots": [
+        {
+          "name": "Kandla",
+          "type": "port",
+          "x": 0.079,
+          "y": 0.454,
+          "mapContext": {
+            "ncertLine": "Kandla is a major port on the west coast.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Mumbai",
+          "type": "port",
+          "x": 0.174,
+          "y": 0.598,
+          "mapContext": {
+            "ncertLine": "Mumbai is the largest port of India.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Marmagao",
+          "type": "port",
+          "x": 0.209,
+          "y": 0.709,
+          "mapContext": {
+            "ncertLine": "Marmagao is an iron ore exporting port.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "New Mangalore",
+          "type": "port",
+          "x": 0.226,
+          "y": 0.774,
+          "mapContext": {
+            "ncertLine": "New Mangalore is a major port in Karnataka.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Kochi",
+          "type": "port",
+          "x": 0.282,
+          "y": 0.878,
+          "mapContext": {
+            "ncertLine": "Kochi is a natural harbour.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Tuticorin",
+          "type": "port",
+          "x": 0.329,
+          "y": 0.91,
+          "mapContext": {
+            "ncertLine": "Tuticorin is a major port in Tamil Nadu.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Chennai",
+          "type": "port",
+          "x": 0.41,
+          "y": 0.787,
+          "mapContext": {
+            "ncertLine": "Chennai is an important port on the east coast.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Visakhapatnam",
+          "type": "port",
+          "x": 0.514,
+          "y": 0.631,
+          "mapContext": {
+            "ncertLine": "Visakhapatnam is a major east coast port.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Paradip",
+          "type": "port",
+          "x": 0.634,
+          "y": 0.545,
+          "mapContext": {
+            "ncertLine": "Paradip is a major port in Odisha.",
+            "tags": ["port"]
+          }
+        },
+
+        {
+          "name": "Kolkata",
+          "type": "port",
+          "x": 0.7,
+          "y": 0.49,
+          "mapContext": {
+            "ncertLine": "Kolkata is a riverine port.",
+            "tags": ["port"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "airports",
+      "label": "International Airports",
+      "spots": [
+        {
+          "name": "Amritsar",
+          "type": "airport",
+          "x": 0.256,
+          "y": 0.216,
+          "mapContext": {
+            "ncertLine": "Amritsar is an international airport.",
+            "tags": ["airport"]
+          }
+        },
+
+        {
+          "name": "Delhi",
+          "type": "airport",
+          "x": 0.32,
+          "y": 0.299,
+          "mapContext": {
+            "ncertLine": "Delhi is a major international air hub.",
+            "tags": ["airport"]
+          }
+        },
+
+        {
+          "name": "Mumbai",
+          "type": "airport",
+          "x": 0.17,
+          "y": 0.591,
+          "mapContext": {
+            "ncertLine": "Mumbai has an international airport.",
+            "tags": ["airport"]
+          }
+        },
+
+        {
+          "name": "Chennai",
+          "type": "airport",
+          "x": 0.41,
+          "y": 0.792,
+          "mapContext": {
+            "ncertLine": "Chennai is an international airport.",
+            "tags": ["airport"]
+          }
+        },
+
+        {
+          "name": "Kolkata",
+          "type": "airport",
+          "x": 0.703,
+          "y": 0.492,
+          "mapContext": {
+            "ncertLine": "Kolkata is an international airport.",
+            "tags": ["airport"]
+          }
+        },
+
+        {
+          "name": "Thiruvananthapuram",
+          "type": "airport",
+          "x": 0.298,
+          "y": 0.91,
+          "mapContext": {
+            "ncertLine": "Thiruvananthapuram is an international airport.",
+            "tags": ["airport"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "soils",
+      "label": "Resources → Major Soil Types",
+      "spots": [
+        {
+          "name": "Alluvial Soil Region",
+          "type": "soil_region",
+          "x": 0.55,
+          "y": 0.36,
+          "mapContext": {
+            "ncertLine": "Alluvial soil is the most widespread soil in India.",
+            "tags": ["soil"]
+          }
+        },
+
+        {
+          "name": "Black Soil Region",
+          "type": "soil_region",
+          "x": 0.42,
+          "y": 0.57,
+          "mapContext": {
+            "ncertLine": "Black soil is ideal for cotton cultivation.",
+            "tags": ["soil"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "crops",
+      "label": "Agriculture → Major Crops",
+      "spots": [
+        {
+          "name": "Rice Belt",
+          "type": "crop_region",
+          "x": 0.62,
+          "y": 0.48,
+          "mapContext": {
+            "ncertLine": "Rice is the major food crop of India.",
+            "tags": ["crop"]
+          }
+        },
+
+        {
+          "name": "Cotton Belt",
+          "type": "crop_region",
+          "x": 0.38,
+          "y": 0.58,
+          "mapContext": {
+            "ncertLine": "Cotton grows well in black soil.",
+            "tags": ["crop"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "dams",
+      "label": "Water Resources → Major Dams",
+      "spots": [
+        {
+          "name": "Bhakra–Nangal",
+          "type": "dam",
+          "x": 0.34,
+          "y": 0.26,
+          "mapContext": {
+            "ncertLine": "Bhakra–Nangal is a multipurpose river project.",
+            "tags": ["dam"]
+          }
+        },
+
+        {
+          "name": "Hirakud",
+          "type": "dam",
+          "x": 0.56,
+          "y": 0.5,
+          "mapContext": {
+            "ncertLine": "Hirakud dam is built on the river Mahanadi.",
+            "tags": ["dam"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "wildlife_parks",
+      "label": "Forest & Wildlife → National Parks",
+      "spots": [
+        {
+          "name": "Kaziranga National Park",
+          "type": "national_park",
+          "x": 0.88,
+          "y": 0.36,
+          "mapContext": {
+            "ncertLine": "Kaziranga is famous for one-horned rhinoceros.",
+            "tags": ["wildlife"]
+          }
+        },
+
+        {
+          "name": "Gir National Park",
+          "type": "national_park",
+          "x": 0.19,
+          "y": 0.46,
+          "mapContext": {
+            "ncertLine": "Gir is the home of Asiatic lion.",
+            "tags": ["wildlife"]
+          }
+        }
+      ]
+    }
+  ]
+}
