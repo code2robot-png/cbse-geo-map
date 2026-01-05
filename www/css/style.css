@@ -25,9 +25,11 @@ body {
 
 select {
   padding: 4px 12px;
-  font-size: 14px;
+  /* font-size: 14px; */
   border-radius: 8px;
   border: 1px solid #ccc;
+  width: 100%;
+  background-color: #d2e848;
 }
 
 .progress {
@@ -40,10 +42,11 @@ select {
   /* display: inline-block;
   padding: 0;
   margin: 0; */
+  top:14px;
 }
 
 .hint-text {
-  font-size: 13px;
+  font-size: 11px;
   margin-bottom: 4px;
 }
 
@@ -58,19 +61,34 @@ select {
   color: #263238;
 }
 
-#mapHintBox {
+#controlHint {
+  cursor: pointer;
+  font-size: 11px;
+  text-align: right;
+  color: #1976d2;
+}
+#mapHintBoxCover {
   position: absolute;
   /* 👇 adjust these two values once */
   left: 46%;
-  bottom: 16%;
-  width: 180px;
-  padding: 10px;
+  top: 15%;
+  width: 140px;
+  padding: 5px;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 13px;
   line-height: 1.4;
-  display: none; /* hidden by default */
+  display: none;  
+}
+
+.hint-box {
+  margin-top: 0px;
+  background: #e3f2fd;
+  padding: 8px;
+  border-radius: 4px;
+  /* display: none; */
+  /* width:30px; height:40px; border:1px solid red */
 }
 
 #indiaMap {
@@ -123,30 +141,43 @@ select {
 
 
 .control-group {
+  /* margin: 5px 0;
+  /* height: 25px; */
+  /* width: 100%;
+  display: flex;
+  flex-direction: row-reverse;*/ */
+  height: auto; 
+}
+
+.pill-group {
   margin: 5px 0;
-  height: 25px;
+  /* height: 25px; */
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  height: auto;
 }
 
 /* Controls Overlay - Top Left */
 .controls-overlay {
   position: absolute;
-  top: 4%;
-  left: 75%;
-  z-index: 20;
+  top: -4%;
+  /* left: 71%; */
+  /* z-index: 20; */
   /* On top of map */
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-family: 'Inter', sans-serif;
-  /* width: 240px; */
+  /* background: white; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
+  /* font-family: 'Inter', sans-serif; */
+  width: 100%;
   /* Compact width */
-  max-width: calc(100% - 30px);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transform: translateX(-50%);
+  /* max-width: calc(100% - 30px); */
+  /* transition: all 0.3s ease; */
+  /* overflow: hidden; */
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  /* transform: translateX(-50%); */
   /* background: rgba(0, 0, 0, 0.7); */
-  color: #fff;
+  /* color: #fff; */
   /* padding: 8px 8px; */
   border-radius: 8px;
 }
@@ -214,6 +245,8 @@ select {
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
+ width:115px;
+  /* transform: translateX(100%); */
 }
 
 .mode-toggle input {
@@ -221,12 +254,13 @@ select {
 }
 
 .mode-pill {
-  padding: 6px 14px;
+  padding: 6px 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   background: #f5f5f5;
   color: #333;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
+  /* width: 30%; */
 }
 
 .mode-toggle input:checked + .mode-pill {
@@ -239,10 +273,10 @@ select {
 }
 
 .progress-wrap {
-  display: flex;
+  /* display: flex;
   align-items: center;
   gap: 8px;
-  width: 100%;
+  width: 100%; */
 }
 
 .progress-count {
@@ -256,6 +290,8 @@ select {
 
 .progress-bar {
   position: relative;
+  display: flex;
+  flex-direction: row;
   flex: 1;
   height: 25px;
   background: #eee;
@@ -322,9 +358,9 @@ select {
 /* Dock container */
 .learning-dock {
   position: absolute;
-  top: 66%;
-  left: 50%;
-  width: 220px;
+  top: 60%;
+  left: 54%;
+  width: 170px;
   height: auto;
   background: rgba(0, 0, 0, 0.7);     /* sea tone */
   border-radius: 8px;

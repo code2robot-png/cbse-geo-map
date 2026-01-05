@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const appState = {
     mode: "learn",
     hintsEnabled: true, // 🔑 new
+    prevMode: null,
   };
 
   let TOPICS = [];
@@ -48,17 +49,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  function setMode(mode) {
-    appState.mode = mode;
-    onModeChange(mode);
-    if (mode === "exam") {
-      enableExamMode();
-    } else {
-      enableLearnMode();
-      hideMapHint(); // ✅ hide any leftover exam hints
-    }
+  function setMode(newMode) {
+    // console.log("Set Mode--");
+    if (appState.mode === newMode) return;
 
+    appState.prevMode = appState.mode;
+    appState.mode = newMode;
+
+    resetOnModeChange(appState.prevMode, newMode);
+    onModeChange(newMode);
     reload();
+  }
+
+  function resetOnModeChange(from, to) {
+    // console.log("ReSet Mode--");
+    // hideMapHint();
+    // hideLearningDock();
+    found = 0;
+
+    spots.forEach((s) => {
+      s.found = false;
+      if (s.hs) {
+        s.hs.classList.remove("locked");
+        s.hs.style.display = to === "learn" ? "block" : "none";
+      }
+    });
   }
 
   function enableExamMode() {
@@ -70,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     LOAD TOPICS
+     LOAD TOPICSprogress
      ========================= */
   fetch(API_ROOT)
     .then((res) => {
@@ -86,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   function populateTopics() {
-    topicSelect.innerHTML = `<option value="">-- Select Topic --</option>`;
+    topicSelect.innerHTML = `<option value="">What you like to discover</option>`;
     TOPICS.forEach((t) => {
       const opt = document.createElement("option");
       opt.value = t.id;
@@ -104,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!tid) {
       activeTopic = null;
-      activeTopic.color = RESOURCE_COLORS[activeTopic.id] || "#4CAF50";
+      // activeTopic.color = RESOURCE_COLORS[activeTopic.id] || "#4CAF50";
       renderIdle();
       return;
     }
@@ -126,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         reload();
       })
       .catch(() => {
-        // infoPanel.innerHTML = "<h3>Error</h3><p>Could not load topic data.</p>";
+        infoPanel.innerHTML = "<h3>Error</h3><p>Could not load topic data.</p>";
       });
   });
 
@@ -137,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearAll();
 
     if (!activeTopic) {
-      renderIdle();
+      // renderIdle();
       return;
     }
 
@@ -145,11 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(reload, 50);
       return;
     }
-
-    // questionOverlay.textContent = `Locate on the map: ${activeTopic.label}`;
-    // questionOverlay.style.display = "block";
-
-    // const rect = img.getBoundingClientRect();
 
     activeTopic.spots.forEach((s) => {
       const spotState = { ...s, found: false };
@@ -202,11 +212,11 @@ document.addEventListener("DOMContentLoaded", () => {
         correct = true;
         s.hs.style.display = "block";
         s.hs.classList.add("locked");
-        showPlacePopup(s.hs, s.name);
         celebrateAt(s.hs);
+        showLearningDock();
+        renderLearningContext(s.mapContext, s.name);
       }
     });
-    ``;
 
     if (correct) {
       hideMapHint();
@@ -214,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = spots.find((s) => !s.found);
       if (target) {
         showMapHint(directionHint(mx, my, target));
+        document.getElementById("mapHintBoxCover").style.display = "block";
       }
     }
 
@@ -260,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function reveal(s, hs) {
     // 🔁 REVISIT (Learn mode)
     if (s.found) {
-      showPlacePopup(hs, s.name);
+      // showPlacePopup(hs, s.name);
       renderLearningContext(s.mapContext, s.name);
       return;
     }
@@ -272,19 +283,12 @@ document.addEventListener("DOMContentLoaded", () => {
     hs.classList.add("locked");
     hs.style.display = "block";
 
-    showPlacePopup(hs, s.name);
+    // showPlacePopup(hs, s.name);
     celebrateAt(hs);
     renderLearningContext(s.mapContext, s.name);
 
     updateProgress();
   }
-
-  // function renderInfo(s) {
-  //   infoPanel.innerHTML = `<h3>${s.name}</h3>
-  //     <p>${s.desc || ""}</p>
-  //     <hr>
-  //     <b>CBSE:</b> ${s.exam || ""}`;
-  // }
 
   function renderIdle() {
     infoPanel.innerHTML =
@@ -339,26 +343,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fill = document.getElementById("progressFill");
     const label = document.getElementById("progressLabel");
-    const count = document.getElementById("progressCount");
+    // const count = document.getElementById("progressCount");
+    // console.log(count);
 
     fill.style.width = percent + "%";
-    count.textContent = `${found} / ${total}`;
+    // count.textContent = `${found} / ${total}`;
+    part_per_total = `${found} / ${total}`;
 
     if (percent < 40) {
       fill.style.background = "linear-gradient(90deg, #e53935, #f9a825)";
-      label.textContent = "Explore locations";
+      label.textContent = part_per_total + " Explore locations";
       label.style.color = "#263238"; // dark text for light bg
     } else if (percent < 80) {
       fill.style.background = "linear-gradient(90deg, #f9a825, #7cb342)";
-      label.textContent = "Look for patterns";
+      label.textContent = part_per_total + " Look for patterns";
       label.style.color = "#263238"; // still dark
     } else if (percent < 100) {
       fill.style.background = "linear-gradient(90deg, #7cb342, #43a047)";
-      label.textContent = "Almost covered";
+      label.textContent = part_per_total + " Almost covered";
       label.style.color = "#ffffff"; // white on green
     } else {
       fill.style.background = "#43a047";
-      label.textContent = "Map covered — revise freely";
+      label.textContent = part_per_total + " Map covered — revise freely";
       label.style.color = "#ffffff";
     }
   }
@@ -378,26 +384,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showMapHint(text) {
+    document.getElementById("mapHintBoxCover").style.display = "block";
+    // console.log("ShowMapHint" + appState.hintsEnabled);
     if (!appState.hintsEnabled) return;
-
-    const box = document.getElementById("mapHintBox");
-    box.innerHTML = `
+    else {
+      // document.getElementById("mapHintBoxCover").style.display = "none";
+      const box = document.getElementById("mapHintBox");
+      box.innerHTML = `
     <div class="hint-text">💡 ${text}</div>
-    <div class="hint-disable" id="disableHints">
-      No hints please
-    </div>
-  `;
-    box.style.display = "block";
 
-    document.getElementById("disableHints").onclick = () => {
-      appState.hintsEnabled = false;
-      hideMapHint();
-    };
+  `;
+      box.style.display = "block";
+    }
   }
 
   function hideMapHint() {
-    document.getElementById("mapHintBox").style.display = "none";
+    document.getElementById("mapHintBoxCover").style.display = "none";
+    const box = document.getElementById("mapHintBox");
+    box.innerHTML = `
+
+  `;
+    box.style.display = "block";
   }
+  const hintEnabler = document.getElementById("controlHint");
+
+  hintEnabler.onclick = () => {
+    // console.log("From Click Enabler" + appState.hintsEnabled);
+    if (appState.hintsEnabled) {
+      appState.hintsEnabled = false;
+      hintEnabler.innerHTML = "Show Hint";
+      hideMapHint();
+    } else {
+      hintEnabler.innerHTML = "Hide Hint";
+      appState.hintsEnabled = true;
+    }
+  };
 
   function fadeOutOldPopups() {
     document.querySelectorAll(".place-popup").forEach((p) => {
@@ -440,19 +461,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showLearningDock() {
     learningDock.classList.remove("hidden");
-    renderIdleDock();
+    // renderIdleDock();
   }
 
   function hideLearningDock() {
     learningDock.classList.add("hidden");
-  }
-  function renderIdleDock() {
-    dockContent.innerHTML = `
-    <div class="dock-idle">
-      Tap a place on the map<br />
-      to understand why it exists
-    </div>
-  `;
   }
 
   function getLegendOffset(hs) {
@@ -504,14 +517,25 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   }
 
-  function onModeChange(mode) {
-    if (mode === "learn") {
-      showLearningDock();
-    } else {
-      hideLearningDock();
-    }
+  function resetLearningBoard() {
+    dockContent.innerHTML = `
+      <div class="dock-idle">
+        Tap a place on the map<br />
+        to understand why it exists
+      </div>
+    `;
   }
 
-  // questionOverlay.style.display = "none";
+  function onModeChange(mode) {
+    hideMapHint();
+    console.log("Mode changed to " + mode);
+    // 🔑 reset ONLY when coming from exam to learn
+    // if (appState.prevMode === "exam" && mode === "learn") {
+    resetLearningBoard();
+    // }
+
+    // learning dock visible in both modes
+    showLearningDock();
+  }
   onModeChange(appState.mode);
 });

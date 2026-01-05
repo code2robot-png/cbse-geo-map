@@ -73,15 +73,7 @@
                     <div class="controls-content" id="controlsContent">
 
                         <!-- Mode Toggle -->
-                        <div class="control-group">
-                            <div class="mode-toggle" role="radiogroup" aria-label="Select Mode">
-                                <input type="radio" id="modeLearn" name="mode" value="learn" checked>
-                                <label for="modeLearn" class="mode-pill">Learn Mode</label>
 
-                                <input type="radio" id="modeExam" name="mode" value="exam">
-                                <label for="modeExam" class="mode-pill">Exam Mode</label>
-                            </div>
-                        </div>
 
                         <!-- Topic Selector -->
                         <div class="control-group">
@@ -91,31 +83,51 @@
                         </div>
 
                         <!-- Progress -->
-                        <div class="control-group progress-wrap">
-                            <div class="progress-count" id="progressCount">0 / 0</div>
 
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="progressFill"></div>
-                                <div class="progress-label" id="progressLabel"></div>
+
+                        <div class="pill-group">
+                            <div class="mode-toggle" role="radiogroup" aria-label="Select Mode">
+                                <input type="radio" id="modeLearn" name="mode" value="learn" checked>
+                                <label for="modeLearn" class="mode-pill">Learn Mode</label>
+
+                                <input type="radio" id="modeExam" name="mode" value="exam">
+                                <label for="modeExam" class="mode-pill">Exam Mode</label>
                             </div>
                         </div>
 
                     </div>
+
                 </div>
 
                 <!-- MAP -->
                 <img src="assets/india-map.png" alt="India Map" id="indiaMap">
+                <div class="control-group progress-wrap">
+
+
+                    <div class="progress-bar">
+                        <!-- <div class="progress-count" id="progressCount"></div> -->
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-label" id="progressLabel"></div>
+                    </div>
+                </div>
 
                 <!-- HINT BOX -->
-                <div id="mapHintBox">💡 Hint will appear here</div>
+
+                <div id="mapHintBoxCover">
+                    <div id="mapHintBox">Hint will appear here</div>
+                    <div id="controlHint" class="hint-box">
+                        Hide Hint
+                    </div>
+                </div>
+
 
                 <!-- LEARNING DOCK -->
                 <div id="learningDock" class="learning-dock hidden">
                     <div class="learning-board">
 
-                        <div class="dock-title">
-                            ⚓️ Learning Board @Andaman
-                        </div>
+                        <!-- <div class="dock-title">
+                            ⚓️ Knowledge Board
+                        </div> -->
 
                         <div id="dockContent" class="dock-content">
                             <div class="dock-idle">
